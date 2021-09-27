@@ -1,0 +1,13 @@
+.app {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    align-content: stretch;
+    height: 100vh;
+}
+
+.div2 {
+    flex-grow: 9;
+    background-color: lightgray;
+    align-self: stretch;
+}

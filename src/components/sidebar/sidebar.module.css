@@ -1,0 +1,28 @@
+.wrap {
+    flex-grow: 1;
+    background-color: rgb(90, 84, 92);
+    align-self: stretch;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    padding-left: 25px;
+}
+
+.text {
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    margin-top: 20px;
+    font-size: 25px;
+    color: white;
+    font-stretch: ultra-condensed;
+}
+
+.motto {
+    color: lightgray;
+    margin-top: 10px;
+    font-size: 14px;
+}
