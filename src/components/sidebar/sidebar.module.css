@@ -7,7 +7,7 @@
     flex-direction: row;
 }
 
-.space {
+.left-space {
     flex-grow: 15;
 }
 
@@ -20,11 +20,12 @@
 }
 
 .text {
+    flex-grow: 1;
+
     font-family: Arial, sans-serif;
 }
 
 .title {
-    margin-top: 20px;
     font-size: 2vw;
     color: white;
     font-stretch: ultra-condensed;
@@ -32,6 +33,17 @@
 
 .motto {
     color: lightgray;
-    margin-top: 10px;
     font-size: 1vw;
+}
+
+.top-space {
+    flex-grow: 2;
+}
+
+.middle-space {
+    flex-grow: 0.75;
+}
+
+.bottom-space {
+    flex-grow: 90;
 }
