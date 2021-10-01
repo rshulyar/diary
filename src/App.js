@@ -1,11 +1,12 @@
 import Sidebar from './components/sidebar';
-import styles from './App.module.css';
+import Body from './components/body';
+import classes from './App.module.css';
 
 function App() {
   return (
-    <div className={styles["app"]}>
+    <div className={classes["app"]}>
       <Sidebar/>
-      <div className={styles["div2"]}></div>
+      <Body/>
     </div>
   );
 }
