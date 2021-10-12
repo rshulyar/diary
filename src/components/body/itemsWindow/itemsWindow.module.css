@@ -1,5 +1,5 @@
 .wrap {
-    flex-grow: 48;
+    flex-grow: 8;
     height: 70%;
     padding: 20px;
 
@@ -12,7 +12,7 @@
 }
 
 .title {
-    font-size: 2vw;
+    font-size: 30px;
     font-family: Arial, sans-serif;
     color: rgb(90, 84, 92);
 }
