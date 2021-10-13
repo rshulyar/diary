@@ -16,3 +16,14 @@
     font-family: Arial, sans-serif;
     color: rgb(90, 84, 92);
 }
+
+.items-container {
+    display:  flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+
+    height: 80%;
+
+    overflow: auto;
+}
