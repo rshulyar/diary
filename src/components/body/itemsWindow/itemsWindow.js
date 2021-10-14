@@ -12,7 +12,14 @@ function ItemsWindow () {
 
     const itemsList = [];
     for (let i = 0; i < store.length; i++) {
-        itemsList.push(<Items name={store[i].name} quantityOfComments={store[i].quantityOfComments}/>);
+        
+        let b = store.indexOf(store[i])
+
+        itemsList.push(<Items 
+            name={store[i].name} 
+            quantityOfComments={store[i].quantityOfComments} 
+            number={b}
+        />);
     }
 
     return (

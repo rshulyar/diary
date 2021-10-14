@@ -14,7 +14,12 @@ const initialState = [{
 
 function itemsList (state = initialState, action) {
   if (action.type === 'add') {
-    return [...state, action.payload]
+    return [...state, action.payload];
+  } else if (action.type === 'delete') {
+    return (
+      [...state.slice(0, action.payload)]
+      .concat([...state.slice(action.payload+1)])
+    );
   }
 }
 
