@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ItemsWindow from './itemsWindow';
+import CommentsWindow from './commentsWindow';
 
 import classes from './body.module.css';
 
@@ -13,7 +14,7 @@ function Body () {
                 <div className={classes['left-column-space']}></div>
                 <ItemsWindow/>
                 <div className={classes['center-column-space']}></div>
-                <div className={classes['div1']}></div>
+                <CommentsWindow/>
                 <div className={classes['right-column-space']}></div>
             </div>
         </div>

@@ -1,0 +1,21 @@
+.wrap {
+    display: flex;
+    flex-direction: row;
+
+    padding: 10px 0px;
+
+    border-bottom: 1px solid lightgray;
+}
+
+.title {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 0px 10px;
+
+    background-color: black;
+}
+
+.inner {
+    width: 90%;
+}
