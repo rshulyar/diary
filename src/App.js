@@ -6,9 +6,7 @@ import classes from './App.module.css';
 function App() {
 const a = useSelector(state => state);
 
-console.log(a);
-
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   return (
     <div className={classes["app"]}>
