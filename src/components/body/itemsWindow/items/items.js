@@ -8,10 +8,17 @@ function Items(props) {
 
     const dispatch = useDispatch();
 
+    function targetItem() {
+
+        return props.number;
+    }
+
     return (
         <div className={classes['wrap']}>
             <div className={classes['inner']}>
-                <div className={classes['name']}>{props.name}</div>
+                <div className={classes['name']} 
+                    onClick={() => {dispatch({type: 'selected', payload: targetItem()})}}
+                >{props.name}</div>
                 <div className={classes['quantity-of-comments']}>{props.quantityOfComments}</div>
             </div>
             <button className={classes['button']} 

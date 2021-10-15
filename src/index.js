@@ -2,35 +2,49 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 
 import App from './App';
 
-const initialState = [{
-  name: 'Add items',
-  comments: [],
-  quantityOfComments: 0
-}];
+const initialState = {
+  itemsBase: [{
+    name: 'Add items',
+    comments: ['first', 'second'],
+    quantityOfComments: 0
+  }],
+  selectedItem: 0
+};
 
-function itemsList (state = initialState, action) {
-  if (action.type === 'add') {
-    return [...state, action.payload];
-  } else if (action.type === 'delete') {
-    return (
-      [...state.slice(0, action.payload)]
+function itemsBase (state = initialState.itemsBase, action) {
+  switch (action.type) {
+    case 'add': {
+      return [...state, action.payload];
+    }
+    case 'delete': {
+      return [...state.slice(0, action.payload)]
       .concat([...state.slice(action.payload+1)])
-    );
+    }
+    default: return state;
   }
 }
 
-const store = createStore(itemsList, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+function selectedItem(state = initialState.selectedItem, action) {
+  switch (action.type) {
+    case 'selected': {
+      return action.payload;
+    }
+  
+    default: return state;
+  }
+}
 
-store.dispatch({type: 'add', payload: {
-  name: 'test',
-  comments: [],
-  quantityOfComments: 0
-}});
+const rootReducer = combineReducers({
+  itemsBase,
+  selectedItem,
+});
+
+const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
   <React.StrictMode>

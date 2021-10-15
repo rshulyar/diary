@@ -8,12 +8,12 @@ import { useSelector } from 'react-redux';
 
 function ItemsWindow () {
 
-    let store = useSelector(state => state);
+    let store = useSelector(state => state.itemsBase);
 
     const itemsList = [];
     for (let i = 0; i < store.length; i++) {
         
-        let b = store.indexOf(store[i])
+        let b = store.indexOf(store[i]);
 
         itemsList.push(<Items 
             name={store[i].name} 
