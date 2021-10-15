@@ -26,10 +26,6 @@ function itemsList (state = initialState, action) {
 const store = createStore(itemsList, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-store.subscribe(() => {
-  console.log(store.getState());
-});
-
 store.dispatch({type: 'add', payload: {
   name: 'test',
   comments: [],

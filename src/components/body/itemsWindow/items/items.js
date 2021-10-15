@@ -8,11 +8,6 @@ function Items(props) {
 
     const dispatch = useDispatch();
 
-    function deleteElement() {
-
-        return props.number;
-    }
-
     return (
         <div className={classes['wrap']}>
             <div className={classes['inner']}>
@@ -20,7 +15,7 @@ function Items(props) {
                 <div className={classes['quantity-of-comments']}>{props.quantityOfComments}</div>
             </div>
             <button className={classes['button']} 
-                onClick={() => {dispatch({type: 'delete', payload: deleteElement()})}}
+                onClick={() => {dispatch({type: 'delete', payload: props.number})}}
             >Delete</button>
         </div>
     );
