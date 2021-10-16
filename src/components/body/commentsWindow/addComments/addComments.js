@@ -34,7 +34,12 @@ function AddComments () {
                 value={comment}
                 onChange={(e) => {
                     setComment(e.target.value);
-                }} 
+                }}
+                onKeyPress={(e) => {
+                    if(e.charCode === 13) {
+                        dispatch({type: 'addComment', payload: addComment()})
+                    }
+                }}
             />
         </div>
     );

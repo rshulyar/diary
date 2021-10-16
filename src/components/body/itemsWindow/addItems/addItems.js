@@ -28,7 +28,12 @@ function AddItems () {
                 value={itemName}
                 onChange={(e) => {
                     setItemName(e.target.value);
-                }} 
+                }}
+                onKeyPress={(e) => {
+                    if(e.charCode === 13) {
+                        dispatch({type: 'add', payload: buttonClick()})
+                    }
+                }}
             />
             <button 
                 className={classes['button']} 
