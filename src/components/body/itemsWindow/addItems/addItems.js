@@ -13,7 +13,6 @@ function AddItems () {
         let a = {
             name: itemName,
             comments: [],
-            quantityOfComments: 0
         }
 
         setItemName('');

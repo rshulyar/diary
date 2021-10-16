@@ -17,6 +17,12 @@ function itemsBase (state = initialState.itemsBase, action) {
             return [...state.slice(0, action.payload)]
             .concat([...state.slice(action.payload+1)])
         }
+        case 'addComment': {
+            if (action.payload.index !== null) {
+                state[action.payload.index].comments.push(action.payload.text);
+            }
+            return [...state];
+        }
         default: return state;
     }
 }

@@ -3,13 +3,20 @@
     flex-direction: row;
 }
 
-.title {
+.button {
     height: 50px;
     width: 50px;
     border-radius: 50%;
+    border: 0;
     margin: 0px 10px;
 
-    background-color: rgb(90, 84, 92);
+    background-color: green;
+    color: white;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: rgb(6, 177, 6);
 }
 
 .input {
