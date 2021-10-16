@@ -13,8 +13,7 @@ function Items(props) {
     let storeSelectedItem = useSelector(state => state.selectedItem);
 
     function targetItem(e) {
-        console.log(e);
-
+        
         return e;
     }
 
