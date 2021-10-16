@@ -16,6 +16,7 @@ function ItemsWindow () {
         let b = store.indexOf(store[i]);
 
         itemsList.push(<Items 
+            key={i}
             name={store[i].name} 
             quantityOfComments={store[i].comments.length} 
             number={b}
