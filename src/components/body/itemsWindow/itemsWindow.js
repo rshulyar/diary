@@ -17,7 +17,7 @@ function ItemsWindow () {
 
         itemsList.push(<Items 
             name={store[i].name} 
-            quantityOfComments={store[i].quantityOfComments} 
+            quantityOfComments={store[i].comments.length} 
             number={b}
         />);
     }

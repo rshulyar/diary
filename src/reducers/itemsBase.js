@@ -1,12 +1,10 @@
 const initialState = {
     itemsBase: [{
         name: 'Add items',
-        comments: ['first', 'second'],
-        quantityOfComments: 0
+        comments: ['first', 'second']
     },{
         name: 'Test',
-        comments: ['one', 'two'],
-        quantityOfComments: 0
+        comments: ['one', 'two']
     }]
 };
 
