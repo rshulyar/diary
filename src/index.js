@@ -11,6 +11,10 @@ const initialState = {
     name: 'Add items',
     comments: ['first', 'second'],
     quantityOfComments: 0
+  },{
+    name: 'Test',
+    comments: ['one', 'two'],
+    quantityOfComments: 0
   }],
   selectedItem: 0
 };
@@ -31,8 +35,13 @@ function itemsBase (state = initialState.itemsBase, action) {
 function selectedItem(state = initialState.selectedItem, action) {
   switch (action.type) {
     case 'selected': {
+      console.log(action.payload);
       return action.payload;
     }
+    // case 'cancleSelected': {
+    //   if (state == action.payload)
+    //     return null;
+    // }
   
     default: return state;
   }

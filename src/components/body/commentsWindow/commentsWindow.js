@@ -13,9 +13,14 @@ function CommentsWindow() {
     let storeSelectedItem = useSelector(state => state.selectedItem);
 
     const commentsList = [];
-    for (let i = 0; i < storeItemsBase[storeSelectedItem].comments.length; i++) {
-        commentsList.push(<Comments text={storeItemsBase[storeSelectedItem].comments[i]} />);
+    if (storeSelectedItem === null) {
+        commentsList.push();
+    } else {
+        for (let i = 0; i < storeItemsBase[storeSelectedItem].comments.length; i++) {
+            commentsList.push(<Comments text={storeItemsBase[storeSelectedItem].comments[i]} />);
+        }
     }
+        
 
     return (
         <div className={classes['wrap']}>
