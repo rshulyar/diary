@@ -17,7 +17,7 @@ function CommentsWindow() {
         commentsList.push();
     } else {
         for (let i = 0; i < storeItemsBase[storeSelectedItem].comments.length; i++) {
-            commentsList.push(<Comments key={i} text={storeItemsBase[storeSelectedItem].comments[i]} />);
+            commentsList.push(<Comments key={i} index={i} text={storeItemsBase[storeSelectedItem].comments[i]} />);
         }
     }
         

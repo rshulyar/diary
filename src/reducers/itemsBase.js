@@ -23,6 +23,13 @@ function itemsBase (state = initialState.itemsBase, action) {
             }
             return [...state];
         }
+        case 'deleteComment': {
+            state[action.payload.indexItem].comments = [...state[action.payload.indexItem].comments.slice(
+                0, action.payload.indexComment)]
+            .concat([...state[action.payload.indexItem].comments.slice(action.payload.indexComment+1)]);
+
+            return [...state];
+        }
         default: return state;
     }
 }
