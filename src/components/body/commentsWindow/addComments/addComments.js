@@ -14,30 +14,30 @@ function AddComments () {
 
     function addComment() {
 
-        let a = {
+        let result = {
             text: comment,
             index: storeSelectedItem
         }
 
         setComment('');
 
-        return a;
+        dispatch({type: 'addComment', payload: result})
     }
 
     return(
         <div className={classes['wrap']}>
             <button className={classes['button']}
-                onClick={()=>{dispatch({type: 'addComment', payload: addComment()})}}
+                onClick={addComment}
             >Add</button>
             <input className={classes['input']}
-                placeholder=" Write comment text"
+                placeholder="Write comment text"
                 value={comment}
                 onChange={(e) => {
                     setComment(e.target.value);
                 }}
                 onKeyPress={(e) => {
                     if(e.charCode === 13) {
-                        dispatch({type: 'addComment', payload: addComment()})
+                        addComment()
                     }
                 }}
             />

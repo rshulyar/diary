@@ -10,14 +10,13 @@ function AddItems () {
 
     function buttonClick () {
 
-        let a = {
+        let result = {
             name: itemName,
             comments: [],
         }
+        dispatch({type: 'add', payload: result})
 
         setItemName('');
-
-        return a;
     }
 
     return (
@@ -31,13 +30,13 @@ function AddItems () {
                 }}
                 onKeyPress={(e) => {
                     if(e.charCode === 13) {
-                        dispatch({type: 'add', payload: buttonClick()})
+                        buttonClick()
                     }
                 }}
             />
             <button 
                 className={classes['button']} 
-                onClick={() => {dispatch({type: 'add', payload: buttonClick()});}}
+                onClick={buttonClick}
             >Add item</button>
         </div>
     );

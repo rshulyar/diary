@@ -10,20 +10,13 @@ function Comments(props) {
 
     let storeSelectedItem = useSelector(state => state.selectedItem);
 
-    function deleteComment() {
-
-        let a = {
-            indexItem: storeSelectedItem,
-            indexComment: props.index
-        };
-
-        return a;
-    }
-
     return (
         <div className={classes['wrap']}>
             <button className={classes['button']}
-                onClick={() => {dispatch({type: 'deleteComment', payload: deleteComment()})}}
+                onClick={() => {dispatch({type: 'deleteComment', payload: {
+                    indexItem: storeSelectedItem,
+                    indexComment: props.index
+                }})}}
             >Del</button>
             <div className={classes['inner']}>{props.text}</div>
         </div>

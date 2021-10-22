@@ -1,34 +1,48 @@
-const initialState = {
-    itemsBase: [{
-        name: 'Add items',
-        comments: ['first', 'second']
-    },{
-        name: 'Test',
-        comments: ['one', 'two']
-    }]
-};
+const initialState = [
+    {
+        name: 'Test item',
+        comments: ['Write comments']
+    }
+];
 
-function itemsBase (state = initialState.itemsBase, action) {
+function itemsBase (state = initialState, action) {
     switch (action.type) {
         case 'add': {
             return [...state, action.payload];
         }
         case 'delete': {
-            return [...state.slice(0, action.payload)]
-            .concat([...state.slice(action.payload+1)])
+            
+            return [...state.slice(0, action.payload),...state.slice(action.payload+1)];
         }
         case 'addComment': {
             if (action.payload.index !== null) {
-                state[action.payload.index].comments.push(action.payload.text);
+                const item = {
+                    ...state[action.payload.index],
+                    comments:[...state[action.payload.index].comments,action.payload.text]
+                };
+                return [...state.slice(0, action.payload.index), item, ...state.slice(action.payload.index + 1)];
             }
-            return [...state];
+            return state;
         }
         case 'deleteComment': {
-            state[action.payload.indexItem].comments = [...state[action.payload.indexItem].comments.slice(
-                0, action.payload.indexComment)]
-            .concat([...state[action.payload.indexItem].comments.slice(action.payload.indexComment+1)]);
-
-            return [...state];
+            const item = {
+                ...state[action.payload.indexItem],
+                comments: [...state[action.payload.indexItem].comments.slice(0, action.payload.indexComment),
+                    ...state[action.payload.indexItem].comments.slice(action.payload.indexComment + 1)]
+            };
+            
+            return ([...state.slice(0, action.payload.indexItem),
+                item,
+                ...state.slice(action.payload.indexItem + 1)]
+            );
+        }
+        case 'finishLoadItemsBase': {
+            return action.payload;
+        }
+        case 'updateState': {
+            const update = JSON.stringify(state);
+            localStorage.setItem('itemsBase', update);
+            console.log(state);
         }
         default: return state;
     }

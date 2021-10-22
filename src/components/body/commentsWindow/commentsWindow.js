@@ -12,12 +12,13 @@ function CommentsWindow() {
     let storeItemsBase = useSelector(state => state.itemsBase);
     let storeSelectedItem = useSelector(state => state.selectedItem);
 
-    const commentsList = [];
-    if (storeSelectedItem === null) {
-        commentsList.push();
-    } else {
-        for (let i = 0; i < storeItemsBase[storeSelectedItem].comments.length; i++) {
-            commentsList.push(<Comments key={i} index={i} text={storeItemsBase[storeSelectedItem].comments[i]} />);
+    function addCommentsList() {
+        if (storeSelectedItem !== null ) {
+            return storeItemsBase[storeSelectedItem].comments.map((item, i) => <Comments
+                key={i}
+                index={i}
+                text={item}
+            />)
         }
     }
         
@@ -26,7 +27,7 @@ function CommentsWindow() {
         <div className={classes['wrap']}>
             <div className={classes['title']}>Comments list</div>
             <div className={classes['comments-container']}>
-                {commentsList}
+                {addCommentsList()}
             </div>
             <AddComments/>
         </div>
