@@ -1,7 +1,7 @@
 .wrap {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 
     padding: 15px 0px;
@@ -12,13 +12,32 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    align-items: flex-start;
+    flex-basis: 80%;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    word-wrap: break-word;
+    overflow: hidden;
 }
 
 .name {
+    display: inline-flex;
+    flex-basis: 80%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+
     font-weight: bold;
+    overflow: hidden;
+
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-line;
+    overflow-wrap: break-word;
 }
 
-.name:hover {
+.inner:hover {
     cursor: pointer;
 }
 

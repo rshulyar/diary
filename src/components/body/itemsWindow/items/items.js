@@ -9,9 +9,10 @@ function Items(props) {
 
     return (
         <div className={classes['wrap']}>
-            <div className={classes['inner']}>
+            <div className={classes['inner']}
+                onClick={() => {dispatch({type: 'selected', payload: props.number})}}
+            >
                 <div className={classes['name']} 
-                    onClick={() => {dispatch({type: 'selected', payload: props.number})}}
                 >{props.name}</div>
                 <div className={classes['quantity-of-comments']}>{props.quantityOfComments}</div>
             </div>
