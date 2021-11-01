@@ -26,6 +26,7 @@
 
 .inner {
     width: 90%;
+    padding: 2px;
     overflow: hidden;
 
     word-break: break-all;

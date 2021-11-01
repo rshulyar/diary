@@ -39,11 +39,6 @@ function itemsBase (state = initialState, action) {
         case 'finishLoadItemsBase': {
             return action.payload;
         }
-        case 'updateState': {
-            const update = JSON.stringify(state);
-            localStorage.setItem('itemsBase', update);
-            console.log(state);
-        }
         default: return state;
     }
 }

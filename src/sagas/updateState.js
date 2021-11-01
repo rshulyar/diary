@@ -1,4 +1,4 @@
-import { takeEvery, put } from 'redux-saga/effects';
+import { takeEvery, select } from 'redux-saga/effects';
 
 function* watchUpdateState() {
     yield takeEvery('add', updateState);
@@ -9,8 +9,9 @@ function* watchUpdateState() {
 }
 
 function* updateState() {
-    console.log(localStorage.getItem('itemsBase'));
-    yield put({type: 'updateState'})
+    
+    const update = JSON.stringify(yield select(x => x.itemsBase));
+    localStorage.setItem('itemsBase', update);
 }
 
 export default watchUpdateState;
